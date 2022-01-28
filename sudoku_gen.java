@@ -1,31 +1,29 @@
 public class sudoku_gen
 {
-    int size=9;
+    int size=16;
     int a[][]=new int[size][size];
     int row[]=new int[size];
 
     public int[][] gen()
     {
-        for(int i=0;i<size;i++)
+        for(int i=0;i<size ;)
         {
-            for(int j=0;j<size; )
+            row=gen_row();
+            if(ch_row(i))
             {
-                row=gen_row();
-                if(ch_row(i,j))
+                place_row(row,i);
+                i++;
+                for(int k=0;k<size;k++)
                 {
-                    place_row(row,i);
-                    j++;
-                    for(int k=0;k<=8;k++)
+                    for(int l=0;l<size;l++)
                     {
-                        for(int l=0;l<=8;l++)
-                        {
-                            System.out.print(a[k][l]+ " ");
-                        }
-                        System.out.println();
+                        System.out.print(a[k][l]+ " ");
                     }
+                    System.out.println();
                 }
-                row=new int[size];
             }
+            row=new int[size];
+
         }
         return a;
     }
@@ -51,11 +49,11 @@ public class sudoku_gen
         }
     }
 
-    public boolean ch_row(int i, int j)
+    public boolean ch_row(int i)
     {
         for(int k=0;k<size;k++)
         {
-            if(ch_row_col(i,j,row[k]) && ch_block(i,j,row[k]))
+            if(ch_row_col(i,k,row[k]) && ch_block(i,k,row[k]))
                 continue;
             else
                 return false;
@@ -63,7 +61,7 @@ public class sudoku_gen
         return true;
     }
 
-    public boolean ch_row_col(int i, int j, int n)
+    public boolean ch_row_col(int i,int j, int n)
     {
         for(int k=0;k<size;k++)
         {
