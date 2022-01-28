@@ -1,8 +1,14 @@
 public class sudoku_gen
 {
-    int size=16;
-    int a[][]=new int[size][size];
-    int row[]=new int[size];
+    int size;
+    int a[][];
+    int row[];
+    sudoku_gen(int s)
+    {
+        size=s;
+        a=new int[s][s];
+        row=new int[s];
+    }
 
     public int[][] gen()
     {
