@@ -12,7 +12,7 @@ public class sudoku_gen
 
     public int[][] gen()
     {
-        System.out.println("generating");
+        System.out.println("Generating Sudoku...");
         for(int i=0;i<size ;)
         {
             row=gen_row();
