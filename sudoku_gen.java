@@ -20,17 +20,6 @@ public class sudoku_gen
             {
                 place_row(row,i);
                 i++;
-                /*for(int k=0;k<size;k++)
-                {
-                    for(int l=0;l<size;l++)
-                    {
-                        if(a[k][l]>9)
-                            System.out.print(a[k][l]+ " ");
-                        else
-                            System.out.print(a[k][l]+ "  ");
-                    }
-                    System.out.println();
-                }*/
             }
             row=new int[size];
 
